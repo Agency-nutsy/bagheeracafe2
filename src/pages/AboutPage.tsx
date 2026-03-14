@@ -5,8 +5,8 @@ import LottieLib from "lottie-react";
 // ✅ Safe Lottie import for Vite
 const Lottie = (LottieLib as any).default ?? LottieLib;
 
-import gallery1 from "@/assets/hero 1.webp";
-import gallery2 from "@/assets/food 1.webp";
+import gallery1 from "@/assets/full.webp";
+import gallery2 from "@/assets/pizza (3).webp";
 import heroImage from "@/assets/vibe 2.webp";
 import earthAnimation from "@/assets/earth.json"; // 🌍 Imported Earth Animation
 import grassImg from "@/assets/grass.png"; // 🌿 Imported Repeating Grass Image

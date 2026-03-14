@@ -16,8 +16,8 @@ import tikkaImg from "@/assets/peri peri.jpg";
 import nachosImg from "@/assets/nachos.jpg";
 import biryaniImg from "@/assets/biryani.jpg";
 import drinkImg from "@/assets/sangriya.jpg";
-import gallery1 from "@/assets/hero 1.webp";
-import gallery2 from "@/assets/hero 3.webp";
+import gallery1 from "@/assets/full.webp";
+import gallery2 from "@/assets/tikka.webp";
 import earthAnimation from "@/assets/earth.json";
 import hangingPotAnimation from "@/assets/hanging_pot.json"; // 🪴 Imported Pot Animation
 import grassImg from "@/assets/grass.png"; // 🌿 Imported Repeating Transparent Grass Image
