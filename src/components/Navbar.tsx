@@ -45,12 +45,23 @@ const Navbar = () => {
       <div className="container flex items-center justify-between h-16 md:h-20">
         <Link 
           to="/" 
-          className="text-2xl font-bold tracking-tight transition-colors duration-300"
-          style={{ fontFamily: "'Playfair Display', serif" }}
+          className="group relative transition-all duration-300"
         >
-          <span className="text-[#FDF5E6]">
+          {/* 🐆 GLOWING GOLDEN BRAND TEXT */}
+          <span 
+            className="text-2xl md:text-3xl font-black tracking-tighter uppercase italic"
+            style={{ 
+              fontFamily: "'Playfair Display', serif",
+              background: "linear-gradient(to bottom, #FDF5E6 0%, #F3D06B 50%, #D4AF37 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              filter: "drop-shadow(0 0 8px rgba(243,208,107,0.6)) drop-shadow(0 0 2px rgba(243,208,107,0.8))"
+            }}
+          >
             Bagheera
           </span>
+          {/* Subtle underline glow on hover */}
+          <div className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#F3D06B] transition-all duration-300 group-hover:w-full shadow-[0_0_10px_#F3D06B]" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -60,7 +71,7 @@ const Navbar = () => {
               <Link
                 to={l.to}
                 style={{ fontFamily: "'Lato', sans-serif" }}
-                className={`text-sm font-medium transition-colors relative py-1 ${
+                className={`text-sm font-bold uppercase tracking-widest transition-colors relative py-1 ${
                   location.pathname === l.to
                     ? "text-[#F3D06B]"
                     : "text-[#FDF5E6]/70 hover:text-[#FDF5E6]"
@@ -70,7 +81,7 @@ const Navbar = () => {
                 {location.pathname === l.to && (
                   <motion.div
                     layoutId="nav-indicator"
-                    className="absolute -bottom-0.5 left-0 right-0 h-0.5 rounded-full bg-[#F3D06B]"
+                    className="absolute -bottom-0.5 left-0 right-0 h-0.5 rounded-full bg-[#F3D06B] shadow-[0_0_10px_#F3D06B]"
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
                 )}
@@ -83,9 +94,9 @@ const Navbar = () => {
         <a
           href={`tel:${PHONE}`}
           style={{ fontFamily: "'Lato', sans-serif" }}
-          className={`hidden md:inline-flex items-center gap-2 rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-300 ${
+          className={`hidden md:inline-flex items-center gap-2 rounded-full px-6 py-2.5 text-sm font-bold uppercase tracking-wider transition-all duration-300 ${
             showSolid
-              ? "bg-[#F3D06B] text-black hover:bg-[#FDF5E6] shadow-[0_0_15px_rgba(243,208,107,0.3)]"
+              ? "bg-[#F3D06B] text-black hover:bg-[#FDF5E6] shadow-[0_0_20px_rgba(243,208,107,0.4)] scale-105"
               : "bg-[#FDF5E6]/10 text-[#FDF5E6] border border-[#FDF5E6]/20 hover:bg-[#FDF5E6]/20"
           }`}
         >
@@ -111,7 +122,7 @@ const Navbar = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden border-t border-[#FDF5E6]/10 bg-[#0A0F0D] overflow-hidden"
+            className="md:hidden border-t border-[#FDF5E6]/10 bg-[#0A0F0D] overflow-hidden shadow-2xl"
           >
             <ul className="flex flex-col p-4 gap-2">
               {navLinks.map((l, i) => (
@@ -125,9 +136,9 @@ const Navbar = () => {
                     to={l.to}
                     onClick={() => setOpen(false)}
                     style={{ fontFamily: "'Lato', sans-serif" }}
-                    className={`block py-3 px-4 rounded-xl text-sm font-bold transition-colors uppercase tracking-wider ${
+                    className={`block py-3 px-4 rounded-xl text-sm font-bold transition-colors uppercase tracking-widest ${
                       location.pathname === l.to
-                        ? "bg-[#F3D06B] text-black shadow-[0_0_10px_rgba(243,208,107,0.2)]"
+                        ? "bg-[#F3D06B] text-black shadow-[0_0_15px_rgba(243,208,107,0.3)]"
                         : "text-[#FDF5E6]/70 hover:bg-[#FDF5E6]/10 hover:text-[#FDF5E6]"
                     }`}
                   >
@@ -143,10 +154,10 @@ const Navbar = () => {
                 <a
                   href={`tel:${PHONE}`}
                   style={{ fontFamily: "'Lato', sans-serif" }}
-                  className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#F3D06B] text-black text-sm font-bold text-center mt-4 shadow-[0_0_15px_rgba(243,208,107,0.3)] uppercase tracking-wider"
+                  className="flex items-center justify-center gap-2 py-4 px-4 rounded-xl bg-[#F3D06B] text-black text-sm font-black text-center mt-4 shadow-[0_0_20px_rgba(243,208,107,0.4)] uppercase tracking-widest"
                 >
                   <Phone size={16} />
-                  Book Table
+                  Book Your Table
                 </a>
               </motion.li>
             </ul>
